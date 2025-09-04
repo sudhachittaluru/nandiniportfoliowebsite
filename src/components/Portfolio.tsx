@@ -113,20 +113,42 @@ const Portfolio = () => {
                 </div>
                 
                 <div className="flex gap-3">
-                  <Button 
-                    size="sm" 
-                    className="flex-1 bg-primary hover:bg-primary-muted text-primary-foreground"
-                  >
-                    <ExternalLink className="mr-2 h-4 w-4" />
-                    View Project
-                  </Button>
-                  <Button 
-                    size="sm" 
-                    variant="outline"
-                    className="border-border hover:border-primary/50"
-                  >
-                    <Github className="h-4 w-4" />
-                  </Button>
+                  {project.title === "Live Polling System" ? (
+                    <>
+                      <Button 
+                        size="sm" 
+                        className="flex-1 bg-primary hover:bg-primary-muted text-primary-foreground"
+                        asChild
+                      >
+                        <a href="/teacher">Teacher Portal</a>
+                      </Button>
+                      <Button 
+                        size="sm" 
+                        variant="outline"
+                        className="flex-1 border-border hover:border-primary/50"
+                        asChild
+                      >
+                        <a href="/student">Student Portal</a>
+                      </Button>
+                    </>
+                  ) : (
+                    <>
+                      <Button 
+                        size="sm" 
+                        className="flex-1 bg-primary hover:bg-primary-muted text-primary-foreground"
+                      >
+                        <ExternalLink className="mr-2 h-4 w-4" />
+                        View Project
+                      </Button>
+                      <Button 
+                        size="sm" 
+                        variant="outline"
+                        className="border-border hover:border-primary/50"
+                      >
+                        <Github className="h-4 w-4" />
+                      </Button>
+                    </>
+                  )}
                 </div>
               </CardContent>
             </Card>
